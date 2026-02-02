@@ -170,18 +170,19 @@ setTimeout(function () {
   ttq.track('Lead');
 }, 1320000); // 22 minutos
 </script>
- <script>
-document.addEventListener('click', function (e) {
-  var el = e.target.closest('button, a');
-  if (!el) return;
+<script>
+document.addEventListener(
+  'click',
+  function (e) {
+    var link = e.target.closest('a[href*="pay.mycheckoutt.com"]');
+    if (!link) return;
 
-  var text = el.innerText.toLowerCase();
-
-  if (text.includes('acheter maintenant')) {
     ttq.track('InitiateCheckout');
-  }
-});
+  },
+  true
+);
 </script>
+
 
 
 
@@ -190,6 +191,7 @@ document.addEventListener('click', function (e) {
 
 </body>
 </html>
+
 
 
 
